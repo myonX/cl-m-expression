@@ -1,4 +1,4 @@
-(defsystem "m-expression"
+(defsystem "cl-m-expression"
   :version "0.0.1"
   :author ""
   :license ""
@@ -7,12 +7,12 @@
                 :components
                 ((:file "main"))))
   :description ""
-  :in-order-to ((test-op (test-op "m-expression/tests"))))
+  :in-order-to ((test-op (test-op "clm-expression/tests"))))
 
-(defsystem "m-expression/tests"
+(defsystem "cl-m-expression/tests"
   :author ""
   :license ""
-  :depends-on ("m-expression"
+  :depends-on ("cl-m-expression"
                "rove")
   :components ((:module "tests"
                 :components
