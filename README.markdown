@@ -2,7 +2,7 @@
 M-Expression Parser for Common Lisp
 ## Usage
 ```lisp
-;;;#M"" を有効化
+;;;enable #M""
 (enable-m-expression-syntax)
 
 #M"fact[n] = [eq[n;1] -> 1;T -> *[n;fact[-[n;1]]]]"
@@ -11,7 +11,7 @@ M-Expression Parser for Common Lisp
 #M"fact[4]"
 ;24
 
-;;;#M""を無効化
+;;;disable #M""
 (disable-m-expression-syntax)
 ```
 ## Installation
