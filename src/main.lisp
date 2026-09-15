@@ -1,7 +1,8 @@
 (uiop:define-package cl-m-expression
                      (:use #:cl)
                      (:export :enable-m-expression-syntax
-                              :disable-m-expression-syntax)
+                              :disable-m-expression-syntax
+                              :parse-m-expression)
                      (:nicknames :m-expr))
 (in-package #:cl-m-expression)
 
@@ -63,13 +64,15 @@
                                        ,(parse-symbol-only-argument (third list))
                                        ,(elt list 7))))
 
+(defun parse-m-expression (m-str)
+       (esrap:parse 'expression m-str))
 
 ;#M"fact[n] = [eq[n;1] -> 1;T -> *[n;fact[-[n;1]]]]"
 (defun m-reader (stream char subchar)
   (declare (ignore char subchar))
   (let ((m-str (read stream t nil t)))
     (check-type m-str string)
-    (esrap:parse 'expression m-str)))
+    (parse-m-expression m-str)))
 
 (defun enable-m-expression-syntax ()
   (set-dispatch-macro-character #\# #\M #'m-reader)
