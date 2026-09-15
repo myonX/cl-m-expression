@@ -2,12 +2,12 @@
   :version "0.0.1"
   :author ""
   :license ""
-  :depends-on ()
+  :depends-on ("esrap")
   :components ((:module "src"
                 :components
                 ((:file "main"))))
   :description ""
-  :in-order-to ((test-op (test-op "clm-expression/tests"))))
+  :in-order-to ((test-op (test-op "cl-m-expression/tests"))))
 
 (defsystem "cl-m-expression/tests"
   :author ""
