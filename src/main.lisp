@@ -61,7 +61,7 @@
 (esrap:defrule defun
                (and symbol "[" (esrap:? (and symbol (* (and ";" symbol)))) "]" spaces "=" spaces expression)
                (:lambda (list) `(defun ,(car list)
-                                       ,(parse-symbol-only-argument (third list))
+                                       ,(parse-argument (third list))
                                        ,(elt list 7))))
 
 (defun parse-m-expression (m-str)
